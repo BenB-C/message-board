@@ -1,0 +1,11 @@
+<h1>Create a new Post</h1>
+
+<form action=<%= "/boards/#{@board_id}/messages" %> method="post">
+  <div class="form-group">
+    <label for="user">User name</label>
+    <input name="user" class="form-control small" type="text">
+    <label for="message">Message text</label>
+    <input name="message" class="form-control big" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>

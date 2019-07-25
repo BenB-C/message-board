@@ -1,0 +1,13 @@
+<h1><%= @board.name %></h1>
+
+<% if @messages.any? %>
+  <ul>
+    <% @messages.each do |message| %>
+    <li>Posted by <%= message.user %>:<br><%= message.message %> </li>
+    <% end %>
+    </ul>
+  <%else%>
+    <p>No messages to display</p>
+  <% end %>
+
+  <a href=<%= "/boards/#{@board_id}/message/new"%>>Add your own message</a>

@@ -1,0 +1,24 @@
+<h1>Welcome to CRUDit, the armpit of the internet!</h1>
+
+<h3>Choose a board!</h3>
+
+<% if @boards.any? %>
+  <ul>
+    <% @boards.each do |board| %>
+    <li><a href="/boards/<%= board.id %>"><%= board.name %> </a></li>
+    <% end %>
+    </ul>
+  <%else%>
+    <p>No boards to display</p>
+  <% end %>
+
+  <a href="/board/new">Add your own message board</a>
+  <hr>
+  <form action="/query_board" method="post">
+    <div class="form-group">
+      <label for="search">Search</label>
+      <input id="search" name="name" class="form-control" type="text">
+    </div>
+
+    <button type="submit" class="btn"> Search</button>
+  </form>
